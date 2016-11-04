@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Blog frontpage
+Route::get('/', 'BlogController@index')->name('blog.index');
+Route::get('post/{id}', 'BlogController@show')->name('blog.show');
+
+// AuthController acties koppelen aan de routes
+Route::get('login', 'Auth\LoginController@showLOginForm')->name('auth.loginform');
+Route::post('login', 'Auth\LoginController@login')->name('auth.login');
+Route::get('logout', 'Auth\LoginController@logout')->name('auth.logout');

@@ -6,4 +6,14 @@
 @import "variables";
 
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Bootstrap material flat bootswatch
+@import "_bootswatch";
+
+// Fontawesome
+@import "font-awesome/scss/font-awesome";
+
+// Custom
+@import "helper_things";
+@import "style";

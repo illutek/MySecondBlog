@@ -1,0 +1,1 @@
+{"version":3,"sources":["admin.scss"],"names":[],"mappings":"AAGA;EACE,aAAa,EACd","file":"admin.css","sourcesContent":["//================================\r\n// @@ ++ Admin SCSS\r\n//================================\r\n.admin {\r\n  color: black;\r\n}\r\n\r\n\r\n\r\n"]}

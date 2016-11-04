@@ -34,6 +34,10 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        $this->redirectAfterLogout = route('auth.login');
+        //Na inloggen naar de admin pagina's'
+        $this->redirectTo = route('admin.posts.index');
+
         $this->middleware('guest', ['except' => 'logout']);
     }
 }
