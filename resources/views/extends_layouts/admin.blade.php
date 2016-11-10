@@ -9,11 +9,29 @@
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 </head>
 <body>
+<div class="admin-nav">
+    <a href="{{ route('blog.index') }}" class="home-icon">
+        <i class="fa fa-home"></i>
+    </a>
+    <a href="{{ route('auth.logout') }}"><i class="fa fa-sign-out"></i> </a>
+</div>
 <header>
+
     <div class="container">
         <h1>Admin - MySecondBlog</h1>
     </div>
 </header>
+<main class="container">
+
+    @include('admin.posts.message')
+
+    @yield('content')
+</main>
+<footer>
+    <div class="container">
+        &copy; {{ date('Y') }} | CVO De verdieping
+    </div>
+</footer>
 
 </body>
 </html>

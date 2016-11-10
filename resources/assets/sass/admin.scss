@@ -1,9 +1,15 @@
 //================================
 // @@ ++ Admin SCSS
 //================================
-.admin {
-  color: black;
-}
+@import "variables";
+
+// Bootstrap
+@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Fontawesome
+@import "font-awesome/scss/font-awesome";
+
+@import "admin-style";
 
 
 

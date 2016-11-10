@@ -20,7 +20,7 @@
 </section>
 <footer class="container margin-top">
     <div class="small">Herhaling MySimpleBlog - Extra Material design
-        <a href="https://bootwatch.com/paper">Paper</a> - <a href="#">Admin</a>
+        <a href="https://bootwatch.com/paper">Paper</a> - <a href="{{ route('admin.posts.index') }}">Admin</a>
     </div>
 </footer>
 

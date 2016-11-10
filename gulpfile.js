@@ -16,8 +16,11 @@ require('laravel-elixir-vue-2');
 elixir(function(mix)
 {
     mix
+        /*
+        Volgende maakt 2 aparte css files aan
+        */
         .sass('app.scss', './public/css/app.css')
-        .sass('admin.scss', './public/css/admin.css')
+        .sass('admin.scss', './public/css/admin.css');
 
     mix.styles([
         //"bootstrap.min.css"

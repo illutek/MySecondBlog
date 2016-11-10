@@ -8750,7 +8750,8 @@ body {
 
 header {
   background: #2196F3;
-  color: white; }
+  color: white;
+  margin-bottom: 25px; }
   header h1 {
     color: white; }
 
