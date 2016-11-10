@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\PostSaveRequest;
 use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
+
+
 
 class PostsController extends Controller
 {
@@ -53,7 +56,7 @@ class PostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostSaveRequest $request)
     {
         $post = new Post();
 
@@ -91,6 +94,8 @@ class PostsController extends Controller
     {
         $post = Post::findOrFail($id);
 
+        $this->authorize('update', $post);
+
         return view('admin.posts.edit', compact('post'));
     }
 
@@ -101,17 +106,20 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PostSaveRequest $request, $id)
     {
         $post = Post::findOrFail($id);
+
+        $this->authorize('update', $post);
 
         $post->title = $request->title;
         $post->body = $request->body;
 
+
         $post->save();
 
         //Session::flash('succes', 'The post was succesfully updated');
-        $request->session()->flash('succes', 'The post was succesfully updated, second method');
+        session()->flash('succes', 'The post was succesfully updated, second method');
 
         return redirect(route('admin.posts.show', $post->id));
     }
@@ -125,6 +133,8 @@ class PostsController extends Controller
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
+
+        $this->authorize('update', $post);
 
         $post->delete();
 

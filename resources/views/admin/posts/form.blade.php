@@ -3,10 +3,12 @@
     <div class="col-md-12 form-group">
         {{ Form::label('title', 'Title Post') }}
         {{ Form::text('title', null, ['class' => 'form-control']) }}
+        {!! $errors->first('title', '<p class="error">:message</p>') !!}
     </div>
     <div class="col-md-12 form-group">
         {{ Form::label('body', 'Your message:') }}
         {{ Form::textarea('body', null, ['class' => 'form-control']) }}
+        {!! $errors->first('body', '<p class="error">:message</p>') !!}
     </div>
     <div class="col-md-12">
         {{--{{ Form::submit('Save') }}--}}
